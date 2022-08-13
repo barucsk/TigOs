@@ -1,0 +1,32 @@
+{
+  "name":"TigOs",
+  "version": "0.0.1",
+  "description":"Permite manejar tickets de OS tickets desde chatigo",
+  "manifest_version":3,
+  "icons":{
+    "128":"./img/icon.png"
+  },
+  "background": {
+    "service_worker": "./js/background.js"
+  },
+  "action": {
+    "default_title": "TigOs",
+    "default_icon":"./img/icon.png",
+    "default_popup":"popout.html"
+  },
+  "declarative_net_request" : {
+    "rule_resources" : [{
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "rules_1.json"
+    }]
+  },
+  "permissions":[
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "tabs"
+    ]
+    ,"host_permissions": [
+      "https://osticketserver/"
+    ]
+}
